@@ -8,8 +8,10 @@ import { PlusIcon } from "@radix-ui/react-icons";
 import { SignedOut, SignInButton } from "@clerk/nextjs";
 import { SignedIn, UserButton } from "@clerk/clerk-react";
 import UserMenu from "../Shared/UserMenu";
+import { checkUser } from "@/lib/checkUser";
 
-const Header = () => {
+const Header = async () => {
+
   return (
     <>
       <nav className="mx-auto py-2 px-4 flex justify-between shadow-amber-500 shadow-lg border-b-2">
