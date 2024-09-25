@@ -1,9 +1,12 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Logo from "../../../assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "@radix-ui/react-icons";
+import { SignedOut, SignInButton } from "@clerk/nextjs";
+import { SignedIn, UserButton } from "@clerk/clerk-react";
 
 const Header = () => {
   return (
@@ -19,7 +22,14 @@ const Header = () => {
               Create Event
             </Button>
           </Link>
-          <Button variant={"outline"}>Login</Button>
+          <SignedOut>
+            <SignInButton forceRedirectUrl={"/sign-in"}>
+              <Button variant={"outline"}>Login</Button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </nav>
     </>
