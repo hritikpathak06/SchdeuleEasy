@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { PlusIcon } from "@radix-ui/react-icons";
 import { SignedOut, SignInButton } from "@clerk/nextjs";
 import { SignedIn, UserButton } from "@clerk/clerk-react";
+import UserMenu from "../Shared/UserMenu";
 
 const Header = () => {
   return (
@@ -23,12 +24,12 @@ const Header = () => {
             </Button>
           </Link>
           <SignedOut>
-            <SignInButton forceRedirectUrl={"/sign-in"}>
+            <SignInButton forceRedirectUrl={"/dashboard"}>
               <Button variant={"outline"}>Login</Button>
             </SignInButton>
           </SignedOut>
           <SignedIn>
-            <UserButton />
+            <UserMenu />
           </SignedIn>
         </div>
       </nav>
