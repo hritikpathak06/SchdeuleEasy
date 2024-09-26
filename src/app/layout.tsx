@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/client/LandingPage/Footer";
 import Header from "@/components/client/LandingPage/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -28,7 +26,6 @@ export default function RootLayout({
           <main className="min-h-screen bg-gradient-to-b from-blue-50 to-zinc-300">
             {children}
           </main>
-          <Footer />
         </body>
       </html>
     </ClerkProvider>

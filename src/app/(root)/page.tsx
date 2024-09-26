@@ -1,5 +1,5 @@
 import React from "react";
-import Poster from "../assets/logo.png";
+import Poster from "../../assets/logo.png";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
