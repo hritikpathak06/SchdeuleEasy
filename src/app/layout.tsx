@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/client/LandingPage/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/client/LandingPage/Footer";
+import { CreateEvent } from "@/components/client/Shared/CreateEvent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer/>
+        <CreateEvent/>
         </body>
       </html>
     </ClerkProvider>
