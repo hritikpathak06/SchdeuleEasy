@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/client/LandingPage/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "@/components/client/LandingPage/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
           <main className="min-h-screen bg-gradient-to-b from-blue-50 to-zinc-300">
             {children}
           </main>
+          <Footer/>
         </body>
       </html>
     </ClerkProvider>

@@ -44,12 +44,12 @@ export default function AppLayout({ children }: any) {
 
         {/* Main content */}
         <main className="flex-1 overflow-y-auto p-4 md:p-8">
-          <header className="flex justify-between items-center mb-4">
+          {/* <header className="flex justify-between items-center mb-4">
             <h2 className="text-5xl md:text-6xl gradient-title pt-2 md:pt-0 text-center md:text-left w-full">
               {navItems.find((item) => item.href === pathname)?.label ||
                 "Dashboard"}
             </h2>
-          </header>
+          </header> */}
           {children}
         </main>
 
