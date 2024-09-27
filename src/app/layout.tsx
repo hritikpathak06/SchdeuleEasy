@@ -5,6 +5,7 @@ import Header from "@/components/client/LandingPage/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/client/LandingPage/Footer";
 import { CreateEvent } from "@/components/client/Shared/CreateEvent";
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <Header />
           <main className="min-h-screen bg-gradient-to-b from-blue-50 to-zinc-300">
+            <Toaster/>
             {children}
           </main>
           <Footer/>

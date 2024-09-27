@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import useFetch from "@/hooks/CustomFetch";
 import { createNewEvent } from "@/actions/events";
+import { useRouter } from "next/navigation";
 
 const EventForm = () => {
   const {
@@ -29,9 +30,12 @@ const EventForm = () => {
     },
   });
 
+  const router = useRouter();
+
   const { loading, error, fn: createEvent } = useFetch(createNewEvent);
   const onsubmit = async (data: any) => {
     await createEvent(data);
+    router.refresh();
   };
   return (
     <>
