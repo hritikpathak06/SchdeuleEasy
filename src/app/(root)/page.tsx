@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import KeyFeatures from "@/components/client/LandingPage/KeyFeatures";
+import Features from "@/components/client/LandingPage/Features";
 
 const Home = () => {
   return (
@@ -32,14 +33,21 @@ const Home = () => {
               </Link>
             </Button>
           </div>
-          <div>
-            <Image alt="poster" width={300} height={300} src={Poster} />
+          <div className=" mt-4">
+            <video className=" w-full h-max" controls autoPlay muted loop>
+              <source
+                src="https://res.cloudinary.com/drbzzh6j7/video/upload/v1727529368/ScheduleEasy/yzxyj6vwcdj2fny6ofur.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
 
         {/* key Features */}
         <div className=" mb-24 w-[80%] mx-auto">
-          <KeyFeatures />
+          {/* <KeyFeatures /> */}
+          <Features/>
         </div>
       </main>
     </>
