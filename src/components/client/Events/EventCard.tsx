@@ -16,9 +16,7 @@ import { deleteSingleEvent } from "@/actions/events";
 
 const EventCard = ({ event, username, isPublic = false }: any) => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
-
   const router = useRouter();
-
   const handleCopyEvent = async () => {
     try {
       await navigator.clipboard.writeText(
@@ -38,10 +36,19 @@ const EventCard = ({ event, username, isPublic = false }: any) => {
     router.refresh();
   };
 
+  const handleCardClick = (e: any) => {
+    if (e.target.tagName !== "BUTTON" && e.target.tagName !== "SVG") {
+      window.open(`${window.location.origin}/${username}/${event.id}`);
+    }
+  };
+
   return (
     <>
       <div>
-        <Card className=" flex flex-col justify-between cursor-pointer">
+        <Card
+          className=" flex flex-col justify-between cursor-pointer"
+          onClick={handleCardClick}
+        >
           <CardHeader>
             <CardTitle className=" text-2xl">{event.title}</CardTitle>
             <CardDescription className=" flex justify-between">
@@ -51,11 +58,12 @@ const EventCard = ({ event, username, isPublic = false }: any) => {
               <span>{event._count.bookings} bookings</span>
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <p>
-              {event.description.substring(0, event?.decsription?.indexOf("."))}
+          <CardContent className="text-wrap">
+            <p className="text-wrap">
+              {event.description.substring(0, 60)}.....
             </p>
           </CardContent>
+
           {!isPublic && (
             <CardFooter className="flex justify-between">
               <Button
