@@ -57,7 +57,7 @@ const Page = () => {
           <form onSubmit={handleSubmit(onsubmit)} className=" space-y-8">
             <div>
               <div className="flex items-center gap-2">
-                <span>localhost:3000/</span>
+                <span>https://scheduleeasy.vercel.app/</span>
                 <Input placeholder="Enter Username" {...register("username")} />
               </div>
               {errors.username && (
