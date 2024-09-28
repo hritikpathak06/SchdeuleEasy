@@ -24,7 +24,7 @@ const page = async ({ params }: any) => {
   }
   return (
     <>
-      <div className=" container mx-auto px-4 py-2">
+      <div className=" container mx-auto px-4 py-2 bg-n-8 min-h-screen text-white">
         <div className=" flex flex-col items-center mb-8">
           <Avatar className=" w-24 h-24 mb-4">
             <AvatarImage src={user.imageUrl as any} alt="UserProfile" />

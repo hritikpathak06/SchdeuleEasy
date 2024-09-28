@@ -6,22 +6,20 @@ import Logo from "../../../assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "@radix-ui/react-icons";
 import { SignedOut, SignInButton } from "@clerk/nextjs";
-import { SignedIn, UserButton } from "@clerk/clerk-react";
+import { SignedIn } from "@clerk/clerk-react";
 import UserMenu from "../Shared/UserMenu";
-import { checkUser } from "@/lib/checkUser";
 
-const Header = async () => {
-
+const Header = () => {
   return (
     <>
-      <nav className="mx-auto py-2 px-4 flex justify-between shadow-amber-500 shadow-lg border-b-2">
-        <Link href={"/"} className=" flex items-center">
-          <Image src={Logo} height={100} width={100} alt="logo" />
+      <nav className="fixed  top-0 w-full py-2 px-4 bg-n-8 flex justify-between shadow-lg border-b-2 z-50">
+        <Link href={"/"} className="flex items-center">
+          <Image src={Logo} height={200} width={200} alt="logo" />
         </Link>
-        <div className=" flex items-center gap-3">
+        <div className="flex items-center gap-3">
           <Link href={`/events?create=true`}>
-            <Button className=" flex items-center gap-2">
-              <PlusIcon className=" h-4 w-4" />
+            <Button className="flex items-center gap-2">
+              <PlusIcon className="h-4 w-4" />
               Create Event
             </Button>
           </Link>
@@ -35,6 +33,8 @@ const Header = async () => {
           </SignedIn>
         </div>
       </nav>
+      {/* Add top padding for the rest of the page to avoid overlap */}
+      <div className="pt-16">{/* Your main content here */}</div>
     </>
   );
 };

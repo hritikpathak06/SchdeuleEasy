@@ -9,12 +9,13 @@ import KeyFeatures from "@/components/client/LandingPage/KeyFeatures";
 const Home = () => {
   return (
     <>
-      <main className=" container mx-auto px-4 py-6 ">
+      <main className=" container mx-auto px-4 py-6 bg-n-8">
         <div className=" w-[80%] mx-auto flex flex-col items-center justify-between">
           <div className=" flex flex-col items-center gap-3">
-            <h1 className=" text-7xl font-extrabold py-5 text-center">
+            <h1 className="text-7xl font-extrabold py-5 text-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
               Your Online Meeting Scheduler
             </h1>
+
             <p className=" text-xl text-gray-700 mb-10 text-center">
               Experience the convenience of effortless scheduling with our
               online meeting scheduler. Designed for individuals and teams

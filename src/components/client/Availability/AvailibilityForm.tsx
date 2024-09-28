@@ -41,7 +41,7 @@ export default function AvailabilityForm({ initialData }: any) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 text-white">
       {[
         "monday",
         "tuesday",
@@ -60,6 +60,7 @@ export default function AvailabilityForm({ initialData }: any) {
               control={control}
               render={({ field }) => (
                 <Checkbox
+                  className=" border-white"
                   checked={field.value}
                   onCheckedChange={(checked) => {
                     setValue(`${day}.isAvailable`, checked);

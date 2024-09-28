@@ -76,3 +76,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.bg-n-8 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 12 21 / var(--tw-bg-opacity)) /* #0e0c15 */;
+}

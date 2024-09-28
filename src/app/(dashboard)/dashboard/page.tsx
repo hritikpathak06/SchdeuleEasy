@@ -10,10 +10,14 @@ import { userNameSchema } from "@/lib/zodSchema";
 import useFetch from "@/hooks/CustomFetch";
 import { updateUsername } from "@/actions/userAction";
 import { BarLoader } from "react-spinners";
+import axios from "axios";
+import LineChart from "@/components/client/Stats/LineChart";
 
 const Page = () => {
   const { isLoaded, user }: any = useUser();
   const [userInfo, setUserInfo] = useState<any>(null);
+  const [bookingCount, setBookingCount] = useState<any>([]);
+  const [eventsCount, setEventsCount] = useState<any>([]);
 
   const {
     register,
@@ -40,16 +44,35 @@ const Page = () => {
     }
   }, [isLoaded]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axios.get("/api/booking");
+        setBookingCount(data.groupedBookings);
+      } catch (error) {
+        console.error("Error fetching booking count:", error);
+      }
+    })();
+    (async () => {
+      try {
+        const { data } = await axios.get("/api/event");
+        setEventsCount(data.groupedEvents);
+      } catch (error) {
+        console.error("Error fetching events count:", error);
+      }
+    })();
+  }, []);
+
   return (
     <>
-      <Card>
+      <Card className=" bg-n-8 text-white">
         <CardHeader>
           <CardTitle>
             Welcome Back 👋 {userInfo?.firstName} {userInfo?.lastName}
           </CardTitle>
         </CardHeader>
       </Card>
-      <Card className=" mt-5">
+      <Card  className=" bg-n-8 text-white mt-6">
         <CardHeader>
           <CardTitle>Your Unique Link</CardTitle>
         </CardHeader>
@@ -76,6 +99,16 @@ const Page = () => {
           </form>
         </CardContent>
       </Card>
+
+      {/* Graph */}
+
+      <div className=" mb-10 mt-5">
+        <LineChart data={bookingCount} title={"Bookings"} />
+      </div>
+      <hr />
+      <div className=" mt-10">
+        <LineChart data={eventsCount} title={"Events"}/>
+      </div>
     </>
   );
 };

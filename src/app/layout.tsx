@@ -30,7 +30,7 @@ export default function RootLayout({
             <Toaster/>
             {children}
           </main>
-          <Footer/>
+         <Footer/>
         <CreateEvent/>
         </body>
       </html>
