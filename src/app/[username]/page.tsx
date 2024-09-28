@@ -45,7 +45,7 @@ const page = async ({ params }: any) => {
           </>
         ) : (
           <>
-            <div className=" grid lg:grid-cols-2  items-center justify-between grid-cols-1 gap-5">
+            <div className=" grid lg:grid-cols-3 md:grid-cols-2  items-center justify-between grid-cols-1 gap-5">
               {user.events.map((event) => {
                 return (
                   <EventCard

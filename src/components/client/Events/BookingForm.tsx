@@ -103,7 +103,7 @@ export default function BookingForm({ event, availability }: any) {
             selected={selectedDate as any}
             onSelect={(date) => {
               setSelectedDate(date as any);
-              setSelectedTime(null); // Reset selected time when date changes
+              setSelectedTime(null); 
             }}
             disabled={[{ before: new Date() }]}
             modifiers={{ available: availableDays }}
