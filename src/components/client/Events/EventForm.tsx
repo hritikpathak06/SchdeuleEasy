@@ -36,7 +36,11 @@ const EventForm = () => {
   const onsubmit = async (data: any) => {
     await createEvent(data);
     router.refresh();
+    window.location.reload();
+    const urlWithoutQuery = window.location.origin + window.location.pathname;
+    router.replace(urlWithoutQuery);
   };
+
   return (
     <>
       <div>

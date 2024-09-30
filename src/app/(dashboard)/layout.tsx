@@ -30,7 +30,7 @@ export default function AppLayout({ children }: any) {
                     href={item.href}
                     className={`flex items-center px-4 py-4 text-gray-300  hover:bg-gray-700 hover:w-[90%] ${
                       pathname === item.href
-                        ? "bg-gray-300 text-black rounded-md w-[90%] "
+                        ? "bg-gray-700 text-white rounded-md w-[90%] "
                         : ""
                     }`}
                   >

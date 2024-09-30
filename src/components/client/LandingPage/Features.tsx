@@ -4,6 +4,10 @@ import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { AnimatedSquareBackground } from "./Animation";
 import { motion } from "framer-motion";
+import Booking from "../../../assets/booking.png";
+import Events from "../../../assets/events.png";
+import Main from "../../../assets/main.png";
+import Meeting from "../../../assets/meetings.png";
 
 const animationVariants = {
   enterLeft: { opacity: 0, x: -100, transition: { duration: 5.0 } },
@@ -50,19 +54,19 @@ const Features = () => {
 
   return (
     <div ref={sectionRef} className="relative">
-      <h2 className="md:text-5xl text-2xl font-extrabold mb-10">
+      <h2 className="md:text-5xl text-2xl font-extrabold mb-10 text-white mt-10">
         Key Features
       </h2>
       <AnimatedSquareBackground />
-      <div className="w-full h-max md:flex md:flex-row flex-col gap-3 mb-3">
+      <div className="w-full h-max md:flex md:flex-row flex-col gap-5 mb-3">
         <motion.div
-          className="md:w-1/2 w-full"
+          className="md:w-1/2 w-full md:mb-5 mb-0"
           initial="enterLeft"
           animate={inView ? "visible" : "enterLeft"}
           variants={animationVariants}
         >
           <Image
-            src={"/members.png"}
+            src={Main}
             alt="Image"
             height={300}
             width={300}
@@ -79,9 +83,13 @@ const Features = () => {
           >
             <div className="flex justify-center mb-4 flex-col">
               <Calendar className="w-8 h-8 mb-2 text-green-500" />
-              <h3 className="text-xl font-semibold mb-2">Leave Management</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Effortless Meeting Scheduling
+              </h3>
               <p className="text-gray-300">
-                Submit, approve, and track leave requests effortlessly.
+                Easily schedule one-on-one meetings with a simple, intuitive
+                interface. Just pick a time, add your details, and send invites
+                in seconds.
               </p>
             </div>
           </motion.div>
@@ -94,15 +102,19 @@ const Features = () => {
           >
             <div className="flex justify-center mb-4 flex-col">
               <Users className="w-8 h-8 mb-2 text-green-500" />
-              <h3 className="text-xl font-semibold mb-2">User Roles</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Seamless Calendar Integration
+              </h3>
               <p className="text-gray-300">
-                Support for Admin, HR, Managers, and Employees.
+                Connect your Google or Outlook calendar for automatic
+                synchronization, ensuring no double bookings or missed
+                appointments.
               </p>
             </div>
           </motion.div>
         </div>
       </div>
-      <div className="w-full h-max md:flex md:flex-row  flex-col-reverse gap-3">
+      <div className="w-full h-max md:flex md:flex-row  flex-col gap-3">
         <div className="md:w-1/2 w-full flex flex-col md:gap-0 gap-3">
           <motion.div
             className="bg-gray-800 p-6 rounded-lg shadow-lg text-center flex md:w-1/2 w-full"
@@ -112,9 +124,12 @@ const Features = () => {
           >
             <div className="flex justify-center mb-4 flex-col gap-3">
               <FileText className="w-8 h-8 mb-2 text-green-500" />
-              <h3 className="text-xl font-semibold mb-2">Reporting</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Instant Video Conferencing Links
+              </h3>
               <p className="text-gray-300">
-                Generate comprehensive reports on leave usage.
+                Automatically generate Google Meet or Zoom links for every
+                meeting, so you and your invitee can join with a single click.
               </p>
             </div>
           </motion.div>
@@ -127,9 +142,12 @@ const Features = () => {
           >
             <div className="flex justify-center mb-4 flex-col">
               <Bell className="w-8 h-8 mb-2 text-green-500" />
-              <h3 className="text-xl font-semibold mb-2">Notifications</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Real-Time Notifications
+              </h3>
               <p className="text-gray-300">
-                Stay informed with email and in-app notifications.
+                Receive instant email confirmations and reminders, keeping both
+                you and your invitee informed of upcoming meetings.
               </p>
             </div>
           </motion.div>
@@ -142,7 +160,7 @@ const Features = () => {
           variants={animationVariants}
         >
           <Image
-            src={"/leaves.png"}
+            src={Events}
             alt="Image"
             height={300}
             width={300}

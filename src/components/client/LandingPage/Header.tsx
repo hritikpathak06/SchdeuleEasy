@@ -12,7 +12,7 @@ import UserMenu from "../Shared/UserMenu";
 const Header = () => {
   return (
     <>
-      <nav className="fixed  top-0 w-full py-2 px-4 bg-n-8 flex justify-between shadow-lg border-b-2 z-50">
+      <nav className="fixed  top-0 w-full py-2 px-4 bg-gray-900 flex justify-between shadow-lg border-b-2 z-50">
         <Link href={"/"} className="flex items-center">
           <Image src={Logo} height={200} width={200} alt="logo" />
         </Link>
