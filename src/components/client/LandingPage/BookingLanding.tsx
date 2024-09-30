@@ -22,9 +22,6 @@ const BookingLanding = () => {
             className="w-full h-auto rounded-lg shadow-lg object-cover"
           />
         </div>
-        <button className="mt-8 px-6 py-3 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-500 transition duration-300">
-          Get Started
-        </button>
       </div>
     </>
   );
